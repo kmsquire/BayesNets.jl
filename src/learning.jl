@@ -81,7 +81,7 @@ Construct an empty ScoreComponentCache the size of ncol(data)
 function ScoreComponentCache(data::DataFrame)
     cache = Array{PriorityQueue{Vector{Int}, Float64}}(ncol(data))
     for i in 1 : ncol(data)
-        cache[i] = PriorityQueue{Vector{Int}, Float64, Base.Order.ForwardOrdering}()
+        cache[i] = PriorityQueue{Vector{Int}, Float64}()
     end
     cache
 end
